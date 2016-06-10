@@ -1,6 +1,7 @@
 ﻿namespace WebApplication1.Models
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
     using System.Data.Entity;
     using System.Linq;
 
@@ -25,10 +26,15 @@
 
     public class Movie
     {
+        
         public int Id { get; set; }
+        [Display(Name="Название")]
         public string Title { get; set; }
+        [Display(Name = "Дата выхода")]
         public DateTime ReleaseDate { get; set; }
+        [Display(Name = "Жанр")]
         public string Genre { get; set; }
+        [Display(Name = "Цена")]
         public decimal Price { get; set; }
     }
     public class MovieDbContext : DbContext
